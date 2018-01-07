@@ -50,7 +50,7 @@ handleClick () {
 }
 
   render () {
-    return (<div className='topstuffdom'>
+    return (<div className='topbuttons'>
       <button onClick={this.startTimer}>start</button>
       <button onClick={this.handleClick}>check</button>
             {this.state.userName}
