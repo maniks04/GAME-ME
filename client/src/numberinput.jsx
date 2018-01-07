@@ -24,7 +24,7 @@ class Numberinput extends React.Component {
                 {this.state.userInput}
                 </div>
                 <form>
-                    <input className='numberinput' placeholder='enter here'></input>
+                    <input classname='numberinput' placeholder='enter here'></input>
                     <br></br>
                     <div className='numbergroup'>
                     <button className='number'>1</button>

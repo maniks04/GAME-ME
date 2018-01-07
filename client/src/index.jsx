@@ -34,7 +34,7 @@ startTimer() {
   axios.post('/mathprofessor', {
     word : 'hello'
   }).then((res) => {
-    console.log(res.data)
+    console.log(res.body)
   })
   // setInterval(() => {
   //   this.setState({ myCounter: this.state.myCounter + 0.01 })
@@ -44,6 +44,7 @@ startTimer() {
   
 
 handleClick () {
+  //console.log(this.state.userName, '  ', this.state.myCounter)
   console.log(Number.parseFloat(this.state.myCounter).toFixed(2), 'Seconds') 
   
 }
@@ -53,6 +54,7 @@ handleClick () {
       <button onClick={this.startTimer}>start</button>
       <button onClick={this.handleClick}>check</button>
             {this.state.userName}
+            {this.state.myCounter}
           
             <Numberinput />
             

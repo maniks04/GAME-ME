@@ -12,19 +12,24 @@ app.post('/', function(req, res) {
   
 })
 
+// app.get('/leaderboard', (req, res) => {
+//   //query the database for results
+//   console.log(req.body)
+//   res.end('leaderboard')
+// })
 
-
-
+// app.post('/leaderboard', (req, res) =>{
+//   //query the database and insert
+//   //then app.get results
+// })
 
 
 app.post('/mathprofessor',function(req, res) {
  var result = algo()
-  //console.log(req.body.word)
   console.log(result)
   res.send(result)
-  
 })
 
-app.listen(process.env.PORT || 3000, function() {
-  console.log('listening on port 3000!');
+app.listen(process.env.PORT || 8080, function() {
+  console.log('listening on port 8080!');
 });
