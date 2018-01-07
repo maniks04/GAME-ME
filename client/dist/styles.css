@@ -1,0 +1,22 @@
+.numberview {
+    font-size : 250px;
+    border : 10px solid black;
+    height : 300px;
+    width : 1000px;
+    text-align : center;
+    display: block;
+    margin: 0 auto;
+    margin-top : 50px
+}
+
+
+.numberinput {
+    font-size : 200px;
+    border : 10px solid black;
+    height : 300px;
+    width : 1000px;
+    text-align : center;
+    display: block;
+    margin: 0 auto;
+    margin-top : 50px
+}

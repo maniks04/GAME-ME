@@ -1,0 +1,11 @@
+DROP DATABASE IF EXISTS 'game-me'
+
+CREATE DATABASE 'game-me'
+
+USE 'game-me'
+
+CREATE TABLE user (
+    id INT NOT NULL AUTO_INCREMENT,
+    name VARCHAR(40) NOT NULL,
+    PRIMARY KEY (id)
+)
