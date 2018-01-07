@@ -54,7 +54,6 @@ handleClick () {
       <button onClick={this.startTimer}>start</button>
       <button onClick={this.handleClick}>check</button>
             {this.state.userName}
-            {this.state.myCounter}
           
             <Numberinput />
             

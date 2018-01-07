@@ -9,7 +9,7 @@ class Numberinput extends React.Component {
 
         this.state = {
             number : '2 + 2',
-            userInput : ''
+            userInput : '1'
         }
 
     }
@@ -19,12 +19,13 @@ class Numberinput extends React.Component {
 
     render() {
         return(<div className='numberdom'>
-                <div>
-                {this.state.number}
-                {this.state.userInput}
+                <div className='currentproblem'>
+                    {this.state.number}
+                </div>
+                <div className='userinput'>
+                    {this.state.userInput}
                 </div>
                 <form>
-                    <input classname='numberinput' placeholder='enter here'></input>
                     <br></br>
                     <div className='numbergroup'>
                     <button className='number'>1</button>

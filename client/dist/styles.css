@@ -2,16 +2,6 @@
 
 
 
-.numberinput {
-    font-size : 200px;
-    border : 10px solid black;
-    height : 300px;
-    width : 1000px;
-    text-align : center;
-    display: block;
-    margin: 0 auto;
-    margin-top : 50px;
-}
 
 .number {
     font-size : 100px;
@@ -22,6 +12,16 @@
     margin-top : 50px;
     text-align : center;
 
+}
+
+.currentproblem {
+    font-size : 100px;
+    text-align : center;
+}
+
+.userinput {
+    font-size : 100px;
+    text-align : center;
 }
 
 
