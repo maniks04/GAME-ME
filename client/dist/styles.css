@@ -14,17 +14,14 @@
 }
 
 .number {
-    font-size : 300px
+    font-size : 100px;
+    text-align : center
 }
 
 .numbergroup {
-    margin-top : 300px
+    margin-top : 50px;
+    text-align : center
 
 }
 
-.topstuffdom {
-    text-align : center;
-}
-.numberdom {
-    text-align : center;
-}
+
