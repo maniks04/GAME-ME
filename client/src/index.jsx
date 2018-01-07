@@ -50,9 +50,9 @@ handleClick () {
 }
 
   render () {
-    return (<div className='topbuttons'>
-      <button onClick={this.startTimer}>start</button>
-      <button onClick={this.handleClick}>check</button>
+    return (<div>
+      <button className='topbutton' onClick={this.startTimer}>start</button>
+      <button className='topbutton' onClick={this.handleClick}>check</button>
             {this.state.userName}
           
             <Numberinput />
