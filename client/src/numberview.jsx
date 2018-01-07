@@ -22,7 +22,7 @@ class Numberview extends React.Component {
     render () {
         return (
             <form>
-                <div className='numberview'>{this.state.someShit}</div>
+                <div className='numberview'>{this.state.number}</div>
                 
             </form>
         )

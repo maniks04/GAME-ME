@@ -1,12 +1,12 @@
 .numberview {
-    font-size : 250px;
+    font-size : 150px;
     border : 10px solid black;
-    height : 300px;
-    width : 1000px;
+    height : 200px;
+    width : 600px;
     text-align : center;
     display: block;
     margin: 0 auto;
-    margin-top : 50px
+    margin-top : 50px;
 }
 
 
@@ -18,5 +18,10 @@
     text-align : center;
     display: block;
     margin: 0 auto;
-    margin-top : 50px
+    margin-top : 50px;
+}
+
+
+.numbergroup {
+    font-size : 20px;
 }

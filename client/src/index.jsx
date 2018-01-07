@@ -17,26 +17,17 @@ class App extends React.Component {
     this.startTimer = this.startTimer.bind(this)
   }
   
-  componentDidMount() {
-    if (this.state.userName === '') {
-      const userName = window.prompt()
+  // componentDidMount() {
+  //   if (this.state.userName === '') {
+  //     const userName = window.prompt()
   
-      {this.setState({userName : userName})}
-      console.log(userName)
-    }
- 
-  
-   
-  
-}
+  //     {this.setState({userName : userName})}
+  //     console.log(userName)
+  //   }
 
+  
+  //}
 
-// componentDidMount() {
-//   this.interval = setInterval(() => this.setState({ time: Date.now() }), 1000);
-// }
-// componentWillUnmount() {
-//   clearInterval(this.interval);
-// }
 
 startTimer() {
   setInterval(() => {
@@ -54,10 +45,10 @@ handleClick () {
 
   render () {
     return (<div>
-      <button onClick={this.startTimer}>Start</button>
+      <button onClick={this.startTimer}>start</button>
       <button onClick={this.handleClick}>check</button>
-        {this.state.myCounter}
             {this.state.userName}
+            {this.state.myCounter}
             <Numberview />
             <Numberinput />
             
