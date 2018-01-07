@@ -56,6 +56,7 @@ handleClick () {
     return (<div>
       <button onClick={this.startTimer}>Start</button>
       <button onClick={this.handleClick}>check</button>
+        {this.state.myCounter}
             {this.state.userName}
             <Numberview />
             <Numberinput />
