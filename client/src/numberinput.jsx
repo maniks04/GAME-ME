@@ -8,6 +8,7 @@ class Numberinput extends React.Component {
         super(props)
 
         this.state = {
+            number : '2 + 2',
             userInput : ''
         }
 
@@ -17,23 +18,31 @@ class Numberinput extends React.Component {
 
 
     render() {
-        return(<div>
-                <form className='numbergroup'>
-                    <button className='1'>1</button>
-                    <button className='2'>2</button>
-                    <button className='3'>3</button>
+        return(<div className='numberdom'>
+                <div>
+                {this.state.number}
+                {this.state.userInput}
+                </div>
+                <form>
+                    <input className='numberinput' placeholder='enter here'></input>
                     <br></br>
-                    <button className='4'>4</button>
-                    <button className='5'>5</button>
-                    <button className='6'>6</button>
+                    <div className='numbergroup'>
+                    <button className='number'>1</button>
+                    <button className='number'>2</button>
+                    <button className='number'>3</button>
                     <br></br>
-                    <button className='7'>7</button>
-                    <button className='8'>8</button>
-                    <button className='9'>9</button>
+                    <button className='number'>4</button>
+                    <button className='number'>5</button>
+                    <button className='number'>6</button>
                     <br></br>
-                    <button className='-'>-</button>
-                    <button className='0'>0</button>
-                    <button className=' . '>.</button>
+                    <button className='number'>7</button>
+                    <button className='number'>8</button>
+                    <button className='number'>9</button>
+                    <br></br>
+                    <button className='number'>-</button>
+                    <button className='number'>0</button>
+                    <button className='number'> . </button>
+                    </div>
                 </form>
             </div>
                 )

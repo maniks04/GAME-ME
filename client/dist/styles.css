@@ -1,13 +1,5 @@
-.numberview {
-    font-size : 150px;
-    border : 10px solid black;
-    height : 200px;
-    width : 600px;
-    text-align : center;
-    display: block;
-    margin: 0 auto;
-    margin-top : 50px;
-}
+
+
 
 
 .numberinput {
@@ -21,7 +13,18 @@
     margin-top : 50px;
 }
 
+.number {
+    font-size : 300px
+}
 
 .numbergroup {
-    font-size : 20px;
+    margin-top : 300px
+
+}
+
+.topstuffdom {
+    text-align : center;
+}
+.numberdom {
+    text-align : center;
 }

@@ -2,7 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import $ from 'jquery';
 import Numberinput from './numberinput.jsx';
-import Numberview from './numberview.jsx'
+import axios from 'axios';
+
 // import AnyComponent from './components/filename.jsx'
 
 class App extends React.Component {
@@ -30,26 +31,29 @@ class App extends React.Component {
 
 
 startTimer() {
-  setInterval(() => {
-    this.setState({ myCounter: this.state.myCounter + 0.01 })
+  axios.post('/mathprofessor', {
+    word : 'hello'
+  }).then((res) => {
+    console.log(res.data)
+  })
+  // setInterval(() => {
+  //   this.setState({ myCounter: this.state.myCounter + 0.01 })
     
-   }, 10); 
+  //  }, 10); 
 }
   
 
 handleClick () {
-  //console.log(this.state.userName, '  ', this.state.myCounter)
   console.log(Number.parseFloat(this.state.myCounter).toFixed(2), 'Seconds') 
   
 }
 
   render () {
-    return (<div>
+    return (<div className='topstuffdom'>
       <button onClick={this.startTimer}>start</button>
       <button onClick={this.handleClick}>check</button>
             {this.state.userName}
-            {this.state.myCounter}
-            <Numberview />
+          
             <Numberinput />
             
             </div>
