@@ -1,4 +1,6 @@
 import React from 'react'
+import App from './index.jsx'
+import Numberinput from './numberinput.jsx'
 
 class Countdown extends React.Component {
     constructor(props) {
@@ -14,16 +16,12 @@ class Countdown extends React.Component {
 
 
     doSomething() {
-        console.log('hey')
-        //console.log('this.state.countDownClock')
         this.setState({countDownClock : this.state.countDownClock-1})
+        console.log(this.state.countDownClock)
     }
     
     componentDidMount() {
-        //var count = 0
-        setInterval(() => {this.doSomething()} , 1000)
-        
-        
+        setInterval(() => {this.doSomething()} , 1000) 
     }
 
     
@@ -31,8 +29,9 @@ class Countdown extends React.Component {
 
 
     render() {
-        //loadindex.jsx finally
-        if (this.state.countDownClock<=0) {return(<div className='fuckyou'>fuck u.</div>)}
+        //load index.jsx finally
+        if (this.state.countDownClock<=0) {return(<Numberinput />)}
+        //if (this.state.countDownClock<=0) {return(<div className='fuckyou'>fuck u.</div>)}
        if (this.state.countDownClock>0){return (<div className='countdown'>{this.state.countDownClock}</div>)}
         
         

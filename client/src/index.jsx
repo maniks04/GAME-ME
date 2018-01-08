@@ -60,15 +60,15 @@ handleClick () {
     }
 
 
-      return (<div>
-        <button className='topbutton' onClick={this.startTimer}>start</button>
-        <button className='topbutton' onClick={this.handleClick}>check</button>
-              {this.state.userName}
+      // return (<div>
+      //   <button className='topbutton' onClick={this.startTimer}>start</button>
+      //   <button className='topbutton' onClick={this.handleClick}>check</button>
+      //         {this.state.userName}
             
-              <Numberinput />
+      //         <Numberinput />
               
-              </div>
-              )
+      //         </div>
+      //         )
     
     
   }
