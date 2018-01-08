@@ -34,6 +34,7 @@
 .welcome {
     font-size : 100px;
     text-align : center;
+    margin-top : 100px;
 }
 
 .to {
@@ -42,7 +43,7 @@
 }
 
 .gameme {
-    font-size : 250px;
+    font-size : 200px;
     text-align : center;
 }
 
