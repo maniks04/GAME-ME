@@ -9,7 +9,7 @@ class Numberinput extends React.Component {
         super(props)
 
         this.state = {
-            number : '',
+            number : 'START',
             userInput : '1',
             myCounter : 0
         }

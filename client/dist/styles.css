@@ -15,8 +15,10 @@
 }
 
 .currentproblem {
+    
     font-size : 300px;
     text-align : center;
+    
 }
 
 .userinput {
@@ -67,7 +69,10 @@
 .countdown {
     font-size : 750px;
     text-align : center;
-    margin-top : 200px
+    margin-top : 200px;
 }
+
+
+
 
 
