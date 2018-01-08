@@ -47,8 +47,12 @@
 }
 
 .startbutton {
-    font-size : 200px;
-    text-align : center;
+    font-size : 100px;
+    
+}
+
+.startbuttoncontainer {
+    text-align : center 
 }
 
 
