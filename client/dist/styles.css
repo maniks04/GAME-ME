@@ -37,12 +37,17 @@
 }
 
 .to {
-    font-size : 50px;
+    font-size : 100px;
     text-align : center;
 }
 
 .gameme {
     font-size : 150px;
+    text-align : center;
+}
+
+.startbutton {
+    font-size : 200px;
     text-align : center;
 }
 
