@@ -3,11 +3,12 @@ var Algo = function() {
     const twentyProblemArray = []
   
     var multiply = function () {
+      var numberOne = Math.round(Math.random() * (12))
+      var numberTwo = Math.round(Math.random() * (12))
       let multiplyObject = {}
-      multiplyObject.numberOne = Math.round(Math.random() * (12))
-      multiplyObject.sign = '*'
-      multiplyObject.numberTwo = Math.round(Math.random() * (12))
-  
+      multiplyObject.problem = numberOne + '*' + numberTwo
+      multiplyObject.result = numberOne * numberTwo
+   
       twentyProblemArray.push(multiplyObject)
   }
   

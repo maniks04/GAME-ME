@@ -10,7 +10,7 @@ class Numberinput extends React.Component {
 
         this.state = {
             number : 'START',
-            userInput : '',
+            userInput : '_',
             myCounter : 0
         }
         
@@ -23,8 +23,8 @@ class Numberinput extends React.Component {
             word : 'hello'
           }).then((res) => {
             console.log(res.data)
-            this.setState({number : (res.data[0].numberOne  + res.data[0].sign  +  res.data[0].numberTwo)})
-
+            this.setState({number : (res.data[0].result)})
+            if (this.state.number === this.state.userInput) {console.log(this.state.myCounter)}
           })
         
         setInterval(() => {
@@ -48,20 +48,20 @@ class Numberinput extends React.Component {
                     <br></br>
                     <div className='numbergroup'>
                     <button onClick={((e) => {e.preventDefault(); console.log(Number.parseFloat(this.state.myCounter).toFixed(2), 'Seconds')})}className='number'>1</button>
-                    <button onClick={((e) => {e.preventDefault(); this.setState({userInput : 2})})}className='number'>2</button>
-                    <button className='number'>3</button>
+                    <button onClick={((e) => {e.preventDefault(); this.setState({userInput : 2})})} className='number'>2</button>
+                    <button onClick={((e) => {e.preventDefault(); this.setState({userInput : 3})})} className='number'>3</button>
                     <br></br>
-                    <button className='number'>4</button>
-                    <button className='number'>5</button>
-                    <button className='number'>6</button>
+                    <button onClick={((e) => {e.preventDefault(); this.setState({userInput : 4})})} className='number'>4</button>
+                    <button onClick={((e) => {e.preventDefault(); this.setState({userInput : 5})})} className='number'>5</button>
+                    <button onClick={((e) => {e.preventDefault(); this.setState({userInput : 6})})} className='number'>6</button>
                     <br></br>
-                    <button className='number'>7</button>
-                    <button className='number'>8</button>
-                    <button className='number'>9</button>
+                    <button onClick={((e) => {e.preventDefault(); this.setState({userInput : 7})})} className='number'>7</button>
+                    <button onClick={((e) => {e.preventDefault(); this.setState({userInput : 8})})} className='number'>8</button>
+                    <button onClick={((e) => {e.preventDefault(); this.setState({userInput : 9})})} className='number'>9</button>
                     <br></br>
-                    <button className='number'>-</button>
-                    <button className='number'>0</button>
-                    <button className='number'> . </button>
+                    <button onClick={((e) => {e.preventDefault(); this.setState({userInput : '-'})})} className='number'>-</button>
+                    <button onClick={((e) => {e.preventDefault(); this.setState({userInput : 0})})} className='number'>0</button>
+                    <button onClick={((e) => {e.preventDefault(); this.setState({userInput : ''})})} className='number'> X </button>
                     </div>
                 </form>
             </div>
