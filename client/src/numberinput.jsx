@@ -1,5 +1,6 @@
 import React from 'react'
 import axios from 'axios';
+import Leaderboard from './leaderboard.jsx'
 
 
 
@@ -33,7 +34,7 @@ class Numberinput extends React.Component {
          var count=0
          this.setState({numberProblem:array[0].problem})
          this.setState({number:array[0].result})
-        setInterval(() => {if(count===21) {this.setState({done : true})};if (this.state.number===this.state.userInput){count++;this.setState({numberProblem:array[count].problem});this.setState({number:array[count].result});this.setState({userInput:'_'})}}, 10)
+        setInterval(() => {if(count===2) {this.setState({done : this.state.true})};if (this.state.number===this.state.userInput){count++;if(array[count]){this.setState({numberProblem:array[count].problem});this.setState({number:array[count].result})};this.setState({userInput:'_'})}}, 10)
      }
     
     componentDidMount() {
@@ -41,9 +42,11 @@ class Numberinput extends React.Component {
             word : 'hello'
           }).then((res) => {
             console.log(res.data)
-            setInterval(() => {
+            setInterval(() => {if(this.state.done===false) {
                 this.setState({ myCounter: this.state.myCounter + 0.01 })
-            }, 10);
+            }
+            }
+                , 10);
             
             this.startTheLoop(res.data)
           })
@@ -55,6 +58,9 @@ class Numberinput extends React.Component {
 
                 
     render() {
+        if (this.state.done!==false) {
+            return(<Leaderboard  timer={Number.parseFloat(this.state.myCounter).toFixed(2)}/>)
+        }
         return(<div className='numberdom'>
                 {Number.parseFloat(this.state.myCounter).toFixed(2)}
                 <div className='currentproblem'>
