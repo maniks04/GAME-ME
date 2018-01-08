@@ -12,49 +12,34 @@ class App extends React.Component {
   	super(props)
   	this.state = {
       userName : '',
-      myCounter : 0,
+      //myCounter : 0,
       pageRendered : false
        //time: Date.now()
     }
-    this.handleClick = this.handleClick.bind(this)
+    //this.handleClick = this.handleClick.bind(this)
     //this.startTimer = this.startTimer.bind(this)
   }
   
-  // componentDidMount() {
-  //   if (this.state.userName === '') {
-  //     const userName = window.prompt()
+  componentDidMount() {
+    console.log('app has started')
+    if (this.state.userName === '') {
+      const userName = window.prompt()
   
-  //     {this.setState({userName : userName})}
-  //     console.log(userName)
-  //   }
+      {this.setState({userName : userName})}
+      console.log(userName)
+    }
 
   
-  //}
+  }
  
-componentDidMount() {
-  // axios.post('/mathprofessor', {
-  //   word : 'hello'
-  // }).then((res) => {
-  //   console.log(res.body)
-  // })
+  
 
-console.log('app has started')
-}
-  
- // setInterval(() => {
-  //   this.setState({ myCounter: this.state.myCounter + 0.01 })
     
-  //  }, 10); 
-handleClick () {
-  //console.log(this.state.userName, '  ', this.state.myCounter)
-  console.log(Number.parseFloat(this.state.myCounter).toFixed(2), 'Seconds') 
-  
-}
 
   render () {
     if (this.state.pageRendered === false) {
       return(
-        <Initialpage />
+        <Initialpage userName={this.state.userName}/>
       )
     }
 

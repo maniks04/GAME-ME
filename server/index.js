@@ -3,6 +3,7 @@ var bodyParser = require('body-parser');
 var request = require('request')
 var app = express();
 var algo = require('./algo.js')
+var db = require('./database.js')
 
 app.use(express.static(__dirname + '/../client/dist'));
 app.use(bodyParser.json())
@@ -12,17 +13,21 @@ app.post('/', function(req, res) {
   
 })
 
-// app.get('/leaderboard', (req, res) => {
-//   //query the database for results
-//   console.log(req.body)
-//   res.end('leaderboard')
-// })
+app.post('/leaderboard', (req, res) => {
+    console.log(req.body)
+    const stringTime = JSON.stringify(req.body.time)
+    db.query('INSERT INTO users (name, time) VALUES ("' + req.body.name + '"' + ', '  + stringTime + ')', function(err, results) {
+      if(err) {console.log(err)}
+    })
 
-// app.post('/leaderboard', (req, res) =>{
-//   //query the database and insert
-//   //then app.get results
-// })
+    res.end('leaderboard')
+})
 
+// sql: 'INSERT INTO users (name, time) VALUES ("i' }
+// sql: 'INSERT INTO users (name, time) VALUES ("m, m")' }
+// db.query('INSERT INTO coins (result) VALUES ("' + coin + '")', function(err, results) {
+//   if(err) {console.log(err)} 
+// })
 
 app.post('/mathprofessor',function(req, res) {
  var result = algo()

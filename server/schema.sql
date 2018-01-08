@@ -1,11 +1,13 @@
-DROP DATABASE IF EXISTS 'game-me'
+DROP DATABASE IF EXISTS gameme;
 
-CREATE DATABASE 'game-me'
+CREATE DATABASE gameme;
 
-USE 'game-me'
+USE gameme
 
-CREATE TABLE user (
+CREATE TABLE users (
     id INT NOT NULL AUTO_INCREMENT,
     name VARCHAR(40) NOT NULL,
-    PRIMARY KEY (id)
+    time VARCHAR(20) NOT NULL,
+     KEY (id)
 )
+

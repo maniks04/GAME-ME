@@ -25,7 +25,7 @@ class Initialpage extends React.Component {
     render() {
         if (this.state.startClicked === true) {
             return (
-                <Countdown />
+                <Countdown userName={this.props.userName}/>
             )
         } 
 
