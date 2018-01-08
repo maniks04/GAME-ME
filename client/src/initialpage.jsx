@@ -1,20 +1,22 @@
 import React from 'react'
-
+import Countdown from './countdown.jsx'
 
 class Initialpage extends React.Component {
     constructor(props) {
         super(props)
 
         this.state = {
-            startClicked : true,
-            countdown : 3
+            startClicked : false,
+            countDownTriggered : false
         }
-
+        this.handleStartClick = this.handleStartClick.bind(this)
     }
 
-    handleStartClick () {
-        console.log('hey')
-        //this.setState({startClicked : true})
+    handleStartClick (e) {
+        e.preventDefault()
+        console.log('handleStartClick()')
+        this.setState({startClicked : true})
+        //this.setState({countDown : this.state.countDown-1})
     }
 
     
@@ -22,8 +24,20 @@ class Initialpage extends React.Component {
 
     render() {
         if (this.state.startClicked === true) {
-            return(<div className='fuckyou'>FUCK YOU</div>)
-        }
+            return (
+                <Countdown />
+            )
+        } 
+
+        // if (this.state.startClicked === true) {
+        //     return(
+        //         <div>
+        //             <div className='fuckyou'>FUCK YOU</div>
+        //             <div>{this.state.countDownTriggered}</div>
+        //         </div>
+        //     )
+        // }
+        
         if (this.state.startClicked === false) {
             return(
                 <div>
@@ -31,7 +45,7 @@ class Initialpage extends React.Component {
                     <h3 className='to' >to</h3>
                     <h1 className='gameme' >GAME--ME</h1>
                     <form className='startbuttoncontainer'>
-                    <button onClick={(e) => {e.preventDefault(); this.handleStartClick}} className='startbutton'>START</button>
+                    <button onClick={this.handleStartClick} className='startbutton'>START</button>
                     </form>
                 </div>
             )
