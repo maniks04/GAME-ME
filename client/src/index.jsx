@@ -17,7 +17,7 @@ class App extends React.Component {
        //time: Date.now()
     }
     this.handleClick = this.handleClick.bind(this)
-    this.startTimer = this.startTimer.bind(this)
+    //this.startTimer = this.startTimer.bind(this)
   }
   
   // componentDidMount() {
@@ -31,21 +31,20 @@ class App extends React.Component {
   
   //}
  
+componentDidMount() {
+  // axios.post('/mathprofessor', {
+  //   word : 'hello'
+  // }).then((res) => {
+  //   console.log(res.body)
+  // })
 
-
-startTimer() {
-  axios.post('/mathprofessor', {
-    word : 'hello'
-  }).then((res) => {
-    console.log(res.body)
-  })
-  // setInterval(() => {
+console.log('app has started')
+}
+  
+ // setInterval(() => {
   //   this.setState({ myCounter: this.state.myCounter + 0.01 })
     
   //  }, 10); 
-}
-  
-
 handleClick () {
   //console.log(this.state.userName, '  ', this.state.myCounter)
   console.log(Number.parseFloat(this.state.myCounter).toFixed(2), 'Seconds') 

@@ -9,33 +9,38 @@ class Numberinput extends React.Component {
         super(props)
 
         this.state = {
-            number : '2 + 2',
-            userInput : '1'
+            number : '',
+            userInput : '1',
+            myCounter : 0
         }
         this.starttimer = this.startTimer.bind(this)
     }
+
+
+
     startTimer() {
         axios.post('/mathprofessor', {
           word : 'hello'
         }).then((res) => {
-          console.log(res.body, 'hi')
+          console.log(res.data)
+          this.setState({number : (res.data[0].numberOne  + res.data[0].sign  +  res.data[0].numberTwo)})
         })
-        // setInterval(() => {
-        //   this.setState({ myCounter: this.state.myCounter + 0.01 })
-          
-        //  }, 10); 
+       
     }
+    
     componentDidMount() {
-        //console.log('mounted')
         this.startTimer()
+        setInterval(() => {
+            this.setState({ myCounter: this.state.myCounter + 0.01 })
+        }, 10);
         
     }
+    //Number.parseFloat(this.state.myCounter).toFixed(2), 'Seconds'
 
-
-
-
+                //{this.state.myCounter}
     render() {
         return(<div className='numberdom'>
+        {Number.parseFloat(this.state.myCounter).toFixed(2)}
                 <div className='currentproblem'>
                     {this.state.number}
                 </div>
@@ -45,7 +50,7 @@ class Numberinput extends React.Component {
                 <form>
                     <br></br>
                     <div className='numbergroup'>
-                    <button className='number'>1</button>
+                    <button onClick={((e) => {e.preventDefault(); console.log(Number.parseFloat(this.state.myCounter).toFixed(2), 'Seconds')})}className='number'>1</button>
                     <button className='number'>2</button>
                     <button className='number'>3</button>
                     <br></br>
@@ -65,8 +70,6 @@ class Numberinput extends React.Component {
             </div>
                 )
     }
-
-
 
 
 }
