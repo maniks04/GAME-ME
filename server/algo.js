@@ -3,8 +3,8 @@ var Algo = function() {
     const twentyProblemArray = []
   
     var multiply = function () {
-      var numberOne = Math.round(Math.random() * (12))
-      var numberTwo = Math.round(Math.random() * (12))
+      var numberOne = Math.round(Math.random() * (3))
+      var numberTwo = Math.round(Math.random() * (3))
       let multiplyObject = {}
       multiplyObject.problem = numberOne + '*' + numberTwo
       multiplyObject.result = numberOne * numberTwo

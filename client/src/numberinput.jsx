@@ -9,37 +9,56 @@ class Numberinput extends React.Component {
         super(props)
 
         this.state = {
-            number : 'START',
+            number : '',
+            numberProblem : '',
             userInput : '_',
-            myCounter : 0
+            myCounter : 0,
+            done : false
         }
-        
+        this.checkCorrectAnswer = this.checkCorrectAnswer.bind(this)
+        this.startTheLoop = this.startTheLoop.bind(this)
+       
     }
 
 
+   
+     
+     
+     checkCorrectAnswer(num) {
+         this.setState({userInput : num}) 
+
+     }
+
+     startTheLoop(array) {
+         var count=0
+         this.setState({numberProblem:array[0].problem})
+         this.setState({number:array[0].result})
+        setInterval(() => {if(count===21) {this.setState({done : true})};if (this.state.number===this.state.userInput){count++;this.setState({numberProblem:array[count].problem});this.setState({number:array[count].result});}}, 10)
+     }
     
     componentDidMount() {
         axios.post('/mathprofessor', {
             word : 'hello'
           }).then((res) => {
             console.log(res.data)
-            this.setState({number : (res.data[0].result)})
-            if (this.state.number === this.state.userInput) {console.log(this.state.myCounter)}
+            setInterval(() => {
+                this.setState({ myCounter: this.state.myCounter + 0.01 })
+            }, 10);
+            
+            this.startTheLoop(res.data)
           })
-        
-        setInterval(() => {
-            this.setState({ myCounter: this.state.myCounter + 0.01 })
-        }, 10);
-        
     }
+
+    
   
+   
 
                 
     render() {
         return(<div className='numberdom'>
                 {Number.parseFloat(this.state.myCounter).toFixed(2)}
                 <div className='currentproblem'>
-                    {this.state.number}
+                    {this.state.numberProblem}
                 </div>
                 <div className='userinput'>
                     {this.state.userInput}
@@ -47,21 +66,21 @@ class Numberinput extends React.Component {
                 <form>
                     <br></br>
                     <div className='numbergroup'>
-                    <button onClick={((e) => {e.preventDefault(); console.log(Number.parseFloat(this.state.myCounter).toFixed(2), 'Seconds')})}className='number'>1</button>
-                    <button onClick={((e) => {e.preventDefault(); this.setState({userInput : 2})})} className='number'>2</button>
-                    <button onClick={((e) => {e.preventDefault(); this.setState({userInput : 3})})} className='number'>3</button>
+                    <button onClick={((e) => {e.preventDefault(); this.checkCorrectAnswer(1)})}className='number'>1</button>
+                    <button onClick={((e) => {e.preventDefault(); this.checkCorrectAnswer(2)})} className='number'>2</button>
+                    <button onClick={((e) => {e.preventDefault(); this.checkCorrectAnswer(3)})} className='number'>3</button>
                     <br></br>
-                    <button onClick={((e) => {e.preventDefault(); this.setState({userInput : 4})})} className='number'>4</button>
-                    <button onClick={((e) => {e.preventDefault(); this.setState({userInput : 5})})} className='number'>5</button>
-                    <button onClick={((e) => {e.preventDefault(); this.setState({userInput : 6})})} className='number'>6</button>
+                    <button onClick={((e) => {e.preventDefault(); this.checkCorrectAnswer(4)})} className='number'>4</button>
+                    <button onClick={((e) => {e.preventDefault(); this.checkCorrectAnswer(5)})} className='number'>5</button>
+                    <button onClick={((e) => {e.preventDefault(); this.checkCorrectAnswer(6)})} className='number'>6</button>
                     <br></br>
-                    <button onClick={((e) => {e.preventDefault(); this.setState({userInput : 7})})} className='number'>7</button>
-                    <button onClick={((e) => {e.preventDefault(); this.setState({userInput : 8})})} className='number'>8</button>
-                    <button onClick={((e) => {e.preventDefault(); this.setState({userInput : 9})})} className='number'>9</button>
+                    <button onClick={((e) => {e.preventDefault(); this.checkCorrectAnswer(7)})} className='number'>7</button>
+                    <button onClick={((e) => {e.preventDefault(); this.checkCorrectAnswer(8)})} className='number'>8</button>
+                    <button onClick={((e) => {e.preventDefault(); this.checkCorrectAnswer(9)})} className='number'>9</button>
                     <br></br>
-                    <button onClick={((e) => {e.preventDefault(); this.setState({userInput : '-'})})} className='number'>-</button>
-                    <button onClick={((e) => {e.preventDefault(); this.setState({userInput : 0})})} className='number'>0</button>
-                    <button onClick={((e) => {e.preventDefault(); this.setState({userInput : ''})})} className='number'> X </button>
+                    <button onClick={((e) => {e.preventDefault(); this.checkCorrectAnswer('-')})} className='number'>-</button>
+                    <button onClick={((e) => {e.preventDefault(); this.checkCorrectAnswer(0)})} className='number'>0</button>
+                    <button onClick={((e) => {e.preventDefault(); this.checkCorrectAnswer('X')})} className='number'> X </button>
                     </div>
                 </form>
             </div>
