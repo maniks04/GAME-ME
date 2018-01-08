@@ -30,6 +30,6 @@ app.post('/mathprofessor',function(req, res) {
   res.send(result)
 })
 
-app.listen(process.env.PORT || 8080, function() {
-  console.log('listening on port 8080!');
+app.listen(process.env.PORT || 2020, function() {
+  console.log('listening on port 2020!');
 });

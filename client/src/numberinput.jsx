@@ -1,4 +1,5 @@
 import React from 'react'
+import axios from 'axios';
 
 
 
@@ -11,7 +12,23 @@ class Numberinput extends React.Component {
             number : '2 + 2',
             userInput : '1'
         }
-
+        this.starttimer = this.startTimer.bind(this)
+    }
+    startTimer() {
+        axios.post('/mathprofessor', {
+          word : 'hello'
+        }).then((res) => {
+          console.log(res.body, 'hi')
+        })
+        // setInterval(() => {
+        //   this.setState({ myCounter: this.state.myCounter + 0.01 })
+          
+        //  }, 10); 
+    }
+    componentDidMount() {
+        //console.log('mounted')
+        this.startTimer()
+        
     }
 
 
@@ -55,16 +72,3 @@ class Numberinput extends React.Component {
 }
 
 export default Numberinput
-
-
-                // <button className='1'></button>
-                // <button className='2'></button>
-                // <button className='3'></button>
-                // <button className='4'></button>
-                // <button className='5'></button>
-                // <button className='6'></button>
-                // <button className='7'></button>
-                // <button className='8'></button>
-                // <button className='9'></button>
-                // <button className='0'></button>
-    
