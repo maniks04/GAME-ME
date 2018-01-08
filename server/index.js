@@ -13,15 +13,15 @@ app.post('/', function(req, res) {
   
 })
 
-// app.post('/leaderboard', (req, res) => {
-//     console.log(req.body)
-//     const stringTime = JSON.stringify(req.body.time)
-//     db.query('INSERT INTO users (name, time) VALUES ("' + req.body.name + '"' + ', '  + stringTime + ')', function(err, results) {
-//       if(err) {console.log(err)}
-//     })
+app.post('/leaderboard', (req, res) => {
+    console.log(req.body)
+    const stringTime = JSON.stringify(req.body.time)
+    db.query('INSERT INTO users (name, time) VALUES ("' + req.body.name + '"' + ', '  + stringTime + ')', function(err, results) {
+      if(err) {console.log(err)}
+    })
 
-//     res.end('leaderboard')
-// })
+    res.end('leaderboard')
+})
 
 // sql: 'INSERT INTO users (name, time) VALUES ("i' }
 // sql: 'INSERT INTO users (name, time) VALUES ("m, m")' }
