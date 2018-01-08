@@ -30,8 +30,8 @@ class Countdown extends React.Component {
 
     render() {
         //load index.jsx finally
-        if (this.state.countDownClock<=0) {return(<Numberinput />)}
-        //if (this.state.countDownClock<=0) {return(<div className='fuckyou'>fuck u.</div>)}
+        //if (this.state.countDownClock<=0) {return(<Numberinput />)}
+        if (this.state.countDownClock<=0) {return(<div className='fuckyou'>HI TAYLOR!</div>)}
        if (this.state.countDownClock>0){return (<div className='countdown'>{this.state.countDownClock}</div>)}
         
         

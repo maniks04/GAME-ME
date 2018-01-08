@@ -10,7 +10,7 @@ class Numberinput extends React.Component {
 
         this.state = {
             number : 'START',
-            userInput : '1',
+            userInput : '',
             myCounter : 0
         }
         
@@ -24,6 +24,7 @@ class Numberinput extends React.Component {
           }).then((res) => {
             console.log(res.data)
             this.setState({number : (res.data[0].numberOne  + res.data[0].sign  +  res.data[0].numberTwo)})
+
           })
         
         setInterval(() => {
@@ -47,7 +48,7 @@ class Numberinput extends React.Component {
                     <br></br>
                     <div className='numbergroup'>
                     <button onClick={((e) => {e.preventDefault(); console.log(Number.parseFloat(this.state.myCounter).toFixed(2), 'Seconds')})}className='number'>1</button>
-                    <button className='number'>2</button>
+                    <button onClick={((e) => {e.preventDefault(); this.setState({userInput : 2})})}className='number'>2</button>
                     <button className='number'>3</button>
                     <br></br>
                     <button className='number'>4</button>
