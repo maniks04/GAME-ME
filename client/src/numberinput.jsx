@@ -13,34 +13,30 @@ class Numberinput extends React.Component {
             userInput : '1',
             myCounter : 0
         }
-        this.starttimer = this.startTimer.bind(this)
+        
     }
 
 
-
-    startTimer() {
-        axios.post('/mathprofessor', {
-          word : 'hello'
-        }).then((res) => {
-          console.log(res.data)
-          this.setState({number : (res.data[0].numberOne  + res.data[0].sign  +  res.data[0].numberTwo)})
-        })
-       
-    }
     
     componentDidMount() {
-        this.startTimer()
+        axios.post('/mathprofessor', {
+            word : 'hello'
+          }).then((res) => {
+            console.log(res.data)
+            this.setState({number : (res.data[0].numberOne  + res.data[0].sign  +  res.data[0].numberTwo)})
+          })
+        
         setInterval(() => {
             this.setState({ myCounter: this.state.myCounter + 0.01 })
         }, 10);
         
     }
-    //Number.parseFloat(this.state.myCounter).toFixed(2), 'Seconds'
+  
 
-                //{this.state.myCounter}
+                
     render() {
         return(<div className='numberdom'>
-        {Number.parseFloat(this.state.myCounter).toFixed(2)}
+                {Number.parseFloat(this.state.myCounter).toFixed(2)}
                 <div className='currentproblem'>
                     {this.state.number}
                 </div>
@@ -68,7 +64,7 @@ class Numberinput extends React.Component {
                     </div>
                 </form>
             </div>
-                )
+        )
     }
 
 
