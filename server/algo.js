@@ -25,7 +25,7 @@ var Algo = function() {
   // }
   
     
-    while (twentyProblemArray.length !== 2) {
+    while (twentyProblemArray.length !== 5) {
       var startNumber = Math.round(Math.random() * (4 - 1) + 1)
         if (startNumber = 1) {multiply()}
         // if (startNumber = 2) {add()}

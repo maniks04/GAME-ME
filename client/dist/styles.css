@@ -76,6 +76,17 @@
     font-size  : 25px;
     color : blue
 }
+
+
+
+.manik{
+    font-size : 15px;
+    text-align : center;
+    margin-top : 10px;
+}
+
+
+
 .leaderboardresultsleft {
     
    
@@ -88,6 +99,10 @@
   
 }
 
+.manik1 {
+    font-size : 30px;
+    text-align : center;
+}
 
 
 

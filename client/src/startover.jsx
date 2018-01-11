@@ -19,6 +19,7 @@ class Startover extends React.Component {
             
         })
         this.setState({timeArray:array.sort()})
+        .then(console.log(this.state.timeArray))
 
     }
 
@@ -37,9 +38,17 @@ render() {
 return(
 <div>
             <button onClick={this.handleClick}> TRY AGAIN!</button>
+            <h1 className='manik1'>LEADERBOARD RESULTS</h1>
 
-            {}
-        <div>{this.state.timeArray}</div>
+            
+       {this.state.timeArray.map((item, idx) => {
+           return <div key={idx}>
+           
+           <div className='manik'>{item[1]}  ---------------  {item[0]}
+           </div>
+                    
+                </div>
+       })}
         </div>
 )
 }
