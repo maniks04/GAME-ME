@@ -23,7 +23,7 @@ class App extends React.Component {
   componentDidMount() {
     console.log('app has started')
     if (this.state.userName === '') {
-      const userName = window.prompt()
+      const userName = window.prompt('PLEASE ENTER YOUR NAME!')
   
       {this.setState({userName : userName})}
       console.log(userName)

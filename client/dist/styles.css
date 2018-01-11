@@ -80,31 +80,41 @@
 
 
 .manik{
-    font-size : 15px;
-    text-align : center;
-    margin-top : 10px;
-}
-
-
-
-.leaderboardresultsleft {
     
-   
-   
-}
-
-.leaderboardresultsright {
-   
-   
   
 }
-
-.manik{
-    text-align : center;
+.index {
+    font-size : 40px
 }
 
 
-.manik1, .smaller {
-    display : inline;
-    font-size : 9px;
+.index, .manik1, .smaller, .manik2 {
+
+    display : inline; 
+    
 }
+.manik1 {
+    font-size : 60px;
+}
+
+.manikwrap {
+    font-size: 100px;
+    text-align:center;
+}
+
+#container {
+    border : 5px solid black;
+
+   width : 800px;
+   margin-left : 300px;
+   margin-top : 200px;
+   
+}
+.manik2 {
+    font-size : 40px;
+}
+.smaller {
+    font-size : 20px;
+}
+
+

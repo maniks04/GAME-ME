@@ -12,29 +12,35 @@ class Numberinput extends React.Component {
         this.state = {
             number : '',
             numberProblem : '',
-            userInput : '_',
+            userInput : '',
             myCounter : 0,
             done : false
         }
         this.checkCorrectAnswer = this.checkCorrectAnswer.bind(this)
         this.startTheLoop = this.startTheLoop.bind(this)
-       
+       this.clearAnswer = this.clearAnswer.bind(this)
     }
 
 
-   
+   clearAnswer() {
+    this.setState({userInput : '' })
+   }
      
      
-     checkCorrectAnswer(num) {
-         this.setState({userInput : num}) 
+     checkCorrectAnswer(numString) {
+      
+        this.setState({userInput : this.state.userInput+numString}) 
+       
 
      }
 
      startTheLoop(array) {
+
          var count=0
          this.setState({numberProblem:array[0].problem})
          this.setState({number:array[0].result})
-        setInterval(() => {if(count===  5) {this.setState({done : this.state.true})};if (this.state.number===this.state.userInput){count++;if(array[count]){this.setState({numberProblem:array[count].problem});this.setState({number:array[count].result})};this.setState({userInput:'_'})}}, 10)
+         
+        setInterval(() => {if(count===  1) {this.setState({done : this.state.true})};if (this.state.number===this.state.userInput){count++;console.log(count);if(array[count]){this.setState({numberProblem:array[count].problem});this.setState({number:array[count].result})};this.setState({userInput:'_'});this.setState({userInput : ''})}}, 10)
      }
     
     componentDidMount() {
@@ -47,9 +53,11 @@ class Numberinput extends React.Component {
             }
             }
                 , 10);
+                
             
             this.startTheLoop(res.data)
           })
+         
     }
 
     
@@ -71,22 +79,23 @@ class Numberinput extends React.Component {
                 </div>
                 <form>
                     <br></br>
+                    <button onClick={((e) => {e.preventDefault(); this.clearAnswer('x')})} className='number'> X </button>
                     <div className='numbergroup'>
-                    <button onClick={((e) => {e.preventDefault(); this.checkCorrectAnswer(1)})}className='number'>1</button>
-                    <button onClick={((e) => {e.preventDefault(); this.checkCorrectAnswer(2)})} className='number'>2</button>
-                    <button onClick={((e) => {e.preventDefault(); this.checkCorrectAnswer(3)})} className='number'>3</button>
+                    <button onClick={((e) => {e.preventDefault(); this.checkCorrectAnswer('1')})}className='number'>1</button>
+                    <button onClick={((e) => {e.preventDefault(); this.checkCorrectAnswer('2')})} className='number'>2</button>
+                    <button onClick={((e) => {e.preventDefault(); this.checkCorrectAnswer('3')})} className='number'>3</button>
                     <br></br>
-                    <button onClick={((e) => {e.preventDefault(); this.checkCorrectAnswer(4)})} className='number'>4</button>
-                    <button onClick={((e) => {e.preventDefault(); this.checkCorrectAnswer(5)})} className='number'>5</button>
-                    <button onClick={((e) => {e.preventDefault(); this.checkCorrectAnswer(6)})} className='number'>6</button>
+                    <button onClick={((e) => {e.preventDefault(); this.checkCorrectAnswer('4')})} className='number'>4</button>
+                    <button onClick={((e) => {e.preventDefault(); this.checkCorrectAnswer('5')})} className='number'>5</button>
+                    <button onClick={((e) => {e.preventDefault(); this.checkCorrectAnswer('6')})} className='number'>6</button>
                     <br></br>
-                    <button onClick={((e) => {e.preventDefault(); this.checkCorrectAnswer(7)})} className='number'>7</button>
-                    <button onClick={((e) => {e.preventDefault(); this.checkCorrectAnswer(8)})} className='number'>8</button>
-                    <button onClick={((e) => {e.preventDefault(); this.checkCorrectAnswer(9)})} className='number'>9</button>
+                    <button onClick={((e) => {e.preventDefault(); this.checkCorrectAnswer('7')})} className='number'>7</button>
+                    <button onClick={((e) => {e.preventDefault(); this.checkCorrectAnswer('8')})} className='number'>8</button>
+                    <button onClick={((e) => {e.preventDefault(); this.checkCorrectAnswer('9')})} className='number'>9</button>
                     <br></br>
                     <button onClick={((e) => {e.preventDefault(); this.checkCorrectAnswer('-')})} className='number'>-</button>
-                    <button onClick={((e) => {e.preventDefault(); this.checkCorrectAnswer(0)})} className='number'>0</button>
-                    <button onClick={((e) => {e.preventDefault(); this.checkCorrectAnswer('X')})} className='number'> X </button>
+                    <button onClick={((e) => {e.preventDefault(); this.checkCorrectAnswer('0')})} className='number'>0</button>
+                    <button onClick={((e) => {e.preventDefault(); this.checkCorrectAnswer('.')})} className='number'> . </button>
                     </div>
                 </form>
             </div>

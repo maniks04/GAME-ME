@@ -16,11 +16,14 @@ class Startover extends React.Component {
         var array = []
         this.props.leaderboardResults.forEach(function(item) {
             array.push([item.time, item.user])
-            
         })
-        this.setState({timeArray:array.sort()})
-        .then(console.log(this.state.timeArray))
-
+        function sortNumber(a,b) {
+            return a[0] - b[0];
+        }
+        
+        array.sort(sortNumber);
+        this.setState({timeArray:array})
+        console.log(array)
     }
 
 
@@ -38,18 +41,19 @@ render() {
 return(
 <div>
             <button onClick={this.handleClick}> TRY AGAIN!</button>
-            <h1 className='manik1'>LEADERBOARD RESULTS</h1>
+            <h1 className='manikwrap'>LEADERBOARD RESULTS</h1>
 
-            
+         <div id='container'>   
        {this.state.timeArray.map((item, idx) => {
            return <div key={idx} className='manik'>
-           
-           <div className='manik1'>{item[1]}  ---------------  {item[0]}</div>
+           <div className='index'>{idx+1}.</div>
+           <div className='manik1'>{item[1]}-</div>
+           <div className='manik2'>{item[0]}</div>
            <div className='smaller'>seconds</div>
            </div>
                     
                 
-       })}
+       })}</div>
         </div>
 )
 }
