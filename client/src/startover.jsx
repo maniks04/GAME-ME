@@ -42,12 +42,13 @@ return(
 
             
        {this.state.timeArray.map((item, idx) => {
-           return <div key={idx}>
+           return <div key={idx} className='manik'>
            
-           <div className='manik'>{item[1]}  ---------------  {item[0]}<div className='smaller'>seconds</div>
+           <div className='manik1'>{item[1]}  ---------------  {item[0]}</div>
+           <div className='smaller'>seconds</div>
            </div>
                     
-                </div>
+                
        })}
         </div>
 )

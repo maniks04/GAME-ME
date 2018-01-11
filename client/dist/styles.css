@@ -99,12 +99,12 @@
   
 }
 
-.manik1 {
-    font-size : 30px;
+.manik{
     text-align : center;
 }
 
 
-.smaller {
-    font-size : 9px
+.manik1, .smaller {
+    display : inline;
+    font-size : 9px;
 }
