@@ -1,5 +1,6 @@
 import React from 'react'
 import axios from 'axios'
+import Startover from './startover.jsx'
 
 
 class Leaderboard extends React.Component {
@@ -7,7 +8,8 @@ class Leaderboard extends React.Component {
         super(props)
 
         this.state = {
-            leaderboardResults : []
+            leaderboardResults : [],
+            looper : false
             
         }
     this.handleClick=this.handleClick.bind(this)
@@ -35,6 +37,7 @@ class Leaderboard extends React.Component {
             console.log('hi', res.data)//hit save
             this.setState({leaderboardResults : res.data})
             console.log('results', this.state.looper)
+            this.setState({looper : true})
             
             // var array = []
             // res.data.forEach((item) =>{
@@ -59,6 +62,9 @@ class Leaderboard extends React.Component {
 
     render() {
 
+        if (this.state.looper===true) {
+            return (<Startover leaderboardResults={this.state.leaderboardResults}/>)
+        }
 
         return( 
 

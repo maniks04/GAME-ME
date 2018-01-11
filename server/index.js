@@ -22,6 +22,7 @@ app.post('/', function(req, res) {
 app.post("/leaderboard", function(req, res, next) { 
   console.log(req.body.name, req.body.time)
   //const stringTime = JSON.stringify(req.body.time) 
+ 
 
   db.save({user: req.body.name, time: req.body.time}, () => {
     console.log('saving')
