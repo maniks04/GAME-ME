@@ -39,7 +39,7 @@ var Algo = function() {
   // }
   
     
-    while (twentyProblemArray.length !== 1) {
+    while (twentyProblemArray.length !== 15) {
       var startNumber = Math.round(Math.random() * (4 - 1) + 1)
         if (startNumber === 1) {multiply()}
          if (startNumber === 2) {add()}

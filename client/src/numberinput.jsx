@@ -40,7 +40,7 @@ class Numberinput extends React.Component {
          this.setState({numberProblem:array[0].problem})
          this.setState({number:array[0].result})
          
-        setInterval(() => {if(count===  1) {this.setState({done : this.state.true})};if (this.state.number===this.state.userInput){count++;console.log(count);if(array[count]){this.setState({numberProblem:array[count].problem});this.setState({number:array[count].result})};this.setState({userInput:'_'});this.setState({userInput : ''})}}, 10)
+        setInterval(() => {if(count===  15) {this.setState({done : this.state.true})};if (this.state.number===this.state.userInput){count++;console.log(count);if(array[count]){this.setState({numberProblem:array[count].problem});this.setState({number:array[count].result})};this.setState({userInput:'_'});this.setState({userInput : ''})}}, 10)
      }
     
     componentDidMount() {
